@@ -1,0 +1,24 @@
+[options]
+addons_path = /mnt/custom-addons,/mnt/et-addons
+data_dir = /var/lib/odoo
+db_host = db
+db_user = odoo
+db_password = odoo
+db_port = 5432
+logfile = /var/log/odoo/odoo.log
+# suitable options for production mode is critical, warn or error, other for dev mode is info, debug or test
+log_level = info
+admin_passwd = admin123@#!
+xmlrpc_port = 8069
+gevent_port = 8072
+proxy_mode = true
+workers = 4
+# 600 (seconds)
+limit_time_real = 600
+limit_time_cpu = 600
+# 4294967296 (bytes) = 4 (GB) * 1024 (MB) * 1024 * 1024
+limit_memory_hard = 4294967296
+limit_memory_soft = 4294967296
+without_demo = all # disable demo data for all modules
+# https://www.odoo.com/documentation/16.0/developer/reference/cli.html
+# https://www.odoo.com/documentation/16.0/administration/install/deploy.html

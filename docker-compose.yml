@@ -1,0 +1,60 @@
+version: "3.1"
+services:
+    db:
+        image: postgres:15
+        environment:
+            - POSTGRES_PASSWORD=odoo
+            - POSTGRES_USER=odoo
+            - POSTGRES_DB=postgres
+        ports:
+            - "15432:5432"
+        volumes:
+            - postgresql-data:/var/lib/postgresql/data
+            - ./postgresql/postgresql.conf:/etc/postgresql/postgresql.conf
+        command: -c 'config_file=/etc/postgresql/postgresql.conf'
+        networks:
+            - backend
+        restart: always
+
+    odoo16:
+        image: xmars/odoo:16
+        depends_on:
+            - db
+        environment:
+            - HOST=db
+            - PORT=5432
+            - USER=odoo
+            - PASSWORD=odoo
+        ports:
+            - "18069:8069"
+            - "18072:8072"
+        volumes:
+            - ./custom-addons:/mnt/custom-addons # customize addons
+            - ./et-addons:/mnt/et-addons # enterprise addons
+            - ./etc:/etc/odoo
+            - ./logs:/var/log/odoo
+            - odoo-data:/var/lib/odoo
+        networks:
+            - frontend
+            - backend
+        restart: always
+    nginx:
+        image: nginx
+        depends_on:
+            - odoo16
+        volumes:
+            - ./nginx:/etc/nginx/conf.d
+        ports:
+            - "80:80"
+        networks:
+            - frontend
+
+volumes:
+    odoo-data:
+    postgresql-data:
+
+networks:
+    frontend:
+        driver: bridge
+    backend:
+        driver: bridge
