@@ -16,8 +16,8 @@ services:
             - backend
         restart: always
 
-    odoo15:
-        image: xmars/odoo:15
+    odoo17:
+        image: xmars/odoo:17
         depends_on:
             - db
         environment:
@@ -41,7 +41,7 @@ services:
     nginx:
         image: nginx
         depends_on:
-            - odoo15
+            - odoo17
         volumes:
             - ./nginx:/etc/nginx/conf.d
         ports:
