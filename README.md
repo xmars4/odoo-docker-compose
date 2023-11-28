@@ -16,7 +16,7 @@ Install docker and docker compose
 
     ```shell
     ODOO_DOCKER_PATH=$HOME/odoo_docker_compose
-    git clone https://github.com/xmars4/odoo_docker-compose -b 16 --depth=1 $ODOO_DOCKER_PATH
+    git clone https://github.com/xmars4/odoo_docker-compose -b 15 --depth=1 $ODOO_DOCKER_PATH
     ```
 
 2. Copy custom addons to folder **custom-addons**
@@ -61,7 +61,7 @@ you can reference to the [sample file](etc/odoo.conf.sample)
 
 ## Tip and Tricks
 
-- [generate records for testing](https://www.odoo.com/documentation/16.0/developer/reference/cli.html#database-population)
+- [generate records for testing](https://www.odoo.com/documentation/15.0/developer/reference/cli.html#database-population)
 
 ```shell
   docker exec <odoo_container_name_or_id> odoo populate --models res.partner,product.product --size medium -c /etc/odoo/odoo.conf
