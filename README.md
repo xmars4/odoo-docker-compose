@@ -1,6 +1,6 @@
 # Odoo's installation using Docker compose
 
-# Requirements
+## Requirements
 
 - Git
 
@@ -28,7 +28,7 @@ you can reference to the [sample file](etc/odoo.conf.sample)
     docker compose up -d 
     ```
 
-1. DONE, your Odoo instance will run on [http://localhost:8069](http://localhost:8069)
+1. DONE, your Odoo instance will run on [http://localhost](http://localhost)
 
 1. _(Optionally)_ Setup log rotate (on host machine)
 
@@ -37,16 +37,15 @@ you can reference to the [sample file](etc/odoo.conf.sample)
     sudo /bin/bash setup-logrotate.sh
     ```
 
-1. _(Optionally)_ If you want running Odooo with extra commands
+1. _(Optionally)_ If you want running Odooo with extra commands, add _command_ param to **etc/odoo.conf** file
 
-- With this option, you can run arbitrary odoo commands
-- for instance:
+- For instance:
 
-    - Add **_command_** param to **etc/odoo.conf** file
+    - Update config file
 
         ```confile
         ...
-        command = -i stock -u sale_management
+        command = -d odoo_db -i stock -u sale_management
         ```
 
     - Restart services
