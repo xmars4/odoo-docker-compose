@@ -1,7 +1,7 @@
 version: "3.8"
 services:
     db:
-        image: postgres:16
+        image: postgres:14
         environment:
             POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
             POSTGRES_USER: odoo
@@ -19,7 +19,7 @@ services:
             - postgres_password
 
     odoo:
-        image: xmars/odoo:16
+        image: xmars/odoo:15
         depends_on:
             - db
         environment:
