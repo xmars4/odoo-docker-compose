@@ -18,7 +18,7 @@ services:
         secrets:
             - postgres_password
 
-    odoo16:
+    odoo:
         image: xmars/odoo:17
         depends_on:
             - db
@@ -46,7 +46,7 @@ services:
     nginx:
         image: nginx
         depends_on:
-            - odoo16
+            - odoo
         volumes:
             - ./nginx:/etc/nginx/conf.d
         ports:
