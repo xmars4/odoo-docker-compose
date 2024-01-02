@@ -14,12 +14,12 @@
 
 ## Running Odoo
 
-1. Copy custom addons to folder **[custom-addons](custom-addons/)**
+1. Copy custom addons to folder **custom-addons/**
 
-1. Create a confile file named **odoo.conf** in folder **[etc/](etc/)**\
-you can reference to the [sample file](etc/odoo.conf.sample)
+1. Create a confile file named **odoo.conf** in folder **etc/**\
+you can reference to the [sample config file](etc/odoo.conf.sample)
 
-1. Create a file named **password.txt** in folder **[postgresql/](postgresql/)** to store DB password
+1. Create a file named **password.txt** within the **postgresql/** folder to securely store the DB password
 
 1. Running Odoo
 
@@ -29,6 +29,10 @@ you can reference to the [sample file](etc/odoo.conf.sample)
     ```
 
 1. DONE, your Odoo instance will run on [http://localhost](http://localhost)
+
+1. _(Optionally)_ Add extra Python libraries to **requirements.txt** file
+
+1. _(Optionally)_ Edit **Dockerfile** to add extra system library
 
 1. _(Optionally)_ Setup log rotate (on host machine)
 
