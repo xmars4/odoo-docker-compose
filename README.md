@@ -1,47 +1,43 @@
 # Odoo's installation using Docker compose
 
-## Prerequisite and Installation
+# Requirements
 
-Install docker and docker compose
+- Git
 
 - [Docker](https://docs.docker.com/engine/install/)
 
 - [Docker compose plugin](https://docs.docker.com/compose/install/linux/)
 
-- [Manage Docker as a non-root user](https://docs.docker.com/engine/install/linux-postinstall/)
+- [Manage Docker as a non-root user](https://docs.docker.com/engine/install/)
+
+- A local copy of the [xmars4/odoo-docker-compose repository](https://github.com/xmars4/odoo-docker-compose)
 
 ## Running Odoo
 
-1. Clone this project to your computer
+1. Copy custom addons to folder **[custom-addons](custom-addons/)**
 
-    ```shell
-    ODOO_DOCKER_PATH=$HOME/odoo_docker_compose
-    git clone https://github.com/xmars4/odoo_docker-compose -b 17 --depth=1 $ODOO_DOCKER_PATH
-    ```
-
-2. Copy custom addons to folder **custom-addons**
-
-3. Copy enterprise addons to folder **et-addons**
-
-4. Create a confile file named **odoo.conf** in folder **[etc/](etc/)**\
+1. Create a confile file named **odoo.conf** in folder **[etc/](etc/)**\
 you can reference to the [sample file](etc/odoo.conf.sample)
-5. Running Odoo
+
+1. Create a file named **password.txt** in folder **[postgresql/](postgresql/)** to store DB password
+
+1. Running Odoo
 
     ```shell
     cd $ODOO_DOCKER_PATH
     docker compose up -d 
     ```
 
-6. DONE, your Odoo instance will run on [http://localhost:18069](http://localhost:18069)
+1. DONE, your Odoo instance will run on [http://localhost:8069](http://localhost:8069)
 
-7. _(Optionally)_ Setup log rotate (on host machine)
+1. _(Optionally)_ Setup log rotate (on host machine)
 
     ```shell
     cd $ODOO_DOCKER_PATH/scripts
     sudo /bin/bash setup-logrotate.sh
     ```
 
-8. _(Optionally)_ If you want to add extra command when run odoo
+1. _(Optionally)_ If you want running Odooo with extra commands
 
 - With this option, you can run arbitrary odoo commands
 - for instance:

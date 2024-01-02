@@ -3,7 +3,6 @@ addons_path = /mnt/custom-addons,/mnt/et-addons
 data_dir = /var/lib/odoo
 db_host = db
 db_user = odoo
-db_password = odoo
 db_port = 5432
 logfile = /var/log/odoo/odoo.log
 # suitable options for production mode is critical, warn or error, other for dev mode is info, debug or test
