@@ -19,7 +19,7 @@ services:
             - postgres_password
 
     odoo:
-        image: xmars/odoo:17
+        image: xmars/odoo:16
         depends_on:
             - db
         environment:
