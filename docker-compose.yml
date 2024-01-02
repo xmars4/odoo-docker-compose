@@ -19,7 +19,9 @@ services:
             - postgres_password
 
     odoo:
-        image: xmars/odoo:15
+        build:
+            context: .
+            dockerfile: Dockerfile
         depends_on:
             - db
         environment:

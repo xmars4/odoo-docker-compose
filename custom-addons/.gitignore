@@ -162,5 +162,3 @@ cython_debug/
 community/
 enterprise/
 venv/
-datadir/
-.idea/
