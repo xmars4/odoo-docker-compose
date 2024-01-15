@@ -8,7 +8,7 @@
 
 - [Docker compose plugin](https://docs.docker.com/compose/install/linux/)
 
-- [Manage Docker as a non-root user](https://docs.docker.com/engine/install/)
+- [Manage Docker as a non-root user](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user)
 
 - A local copy of the [xmars4/odoo-docker-compose repository](https://github.com/xmars4/odoo-docker-compose)
 
